@@ -41,7 +41,7 @@
 
 function search() {
 
-  // Declare variables
+  // Declare and set variables
 
   var input, filter, section, card_bodies;
 
@@ -50,16 +50,15 @@ function search() {
   section = document.getElementById("myCards");
   card_bodies = section.getElementsByClassName('card-body');
 
+  // Declare more variables ot use within the loop
   var i, card_body, card, allText, moreStart, moreEnd, txtToSearch;
 
-  // Loop through all headers items, and hide the grandparent (card) of those
-  // which don't match the search query
+  // Loop through all card bodies, hiding the respective card of those
+  // whose text don't match the search query
 
   for (i = 0; i < card_bodies.length; i++) {
 
     card_body = card_bodies[i];
-
-    card = card_body.parentNode;
 
     allText = card_body.innerText;
 
@@ -71,6 +70,8 @@ function search() {
     txtToSearch = allText.slice(0, moreStart) + allText.slice(moreEnd);
 
     // update style.display according to search
+
+    card = card_body.parentNode.parentNode.parentNode;
 
     card.style.display = (
         txtToSearch.toLowerCase().indexOf(filter) > -1 ? "" : "none"
@@ -125,147 +126,197 @@ function toggleCollapsedIcon() {
     <button class="btn btn-secondary" onclick="searchTerm('');">Clear <i class="fa fa-remove"></i></button>
   </div>
 
-<section id="myCards" class="d-flex flex-wrap bg-light">
+<section id="myCards" class="bg-light">
 
     <!-- ### entry -->
-    <div class="card p-2 m-2" style="max-width:355px">
+    <div class="card mb-3">
 
-      <img class="card-img-top" src="https://i.imgur.com/lkhjel0.png" alt="small screenshot of pillow example node pack"/>
+      <div class="row no-gutters">
 
-      <div class="card-body">
-
-        <h4 class="card-title">Pillow example node pack</h4>
-
-        <div class="m-2">
-
-            By:&nbsp;
-
-            <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-dark">Kennedy Richard</span></a> <a href="https://kennedyrichard.com"><i class="fa fa-link"></i></a>
-
+        <div class="col-md-4">
+          <img class="card-img-top" src="https://i.imgur.com/lkhjel0.png" alt="small screenshot of pillow example node pack"/>
         </div>
 
-        <p class="card-text">An example node pack which uses Pillow for image editing. <a href="https://github.com/KennedyRichard/pillow_example_node_pack">Link <i class="fa fa-arrow-circle-right"></i></a></p>
+        <div class="col-md-8">
 
-        <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-success">Local node pack</span></a>
+          <div class="card-body">
 
-        <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-secondary">Pillow</span></a>
-        <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-secondary">image editing</span></a>
-        <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-secondary">example</span></a>
+            <h4 class="card-title">Pillow example node pack</h4>
+
+            <div class="m-2">
+
+                By:&nbsp;
+
+                <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-dark">Kennedy Richard</span></a> <a href="https://kennedyrichard.com"><i class="fa fa-link"></i></a>
+
+            </div>
+
+            <p class="card-text">An example node pack which uses Pillow for image editing. <a href="https://github.com/KennedyRichard/pillow_example_node_pack">Link <i class="fa fa-arrow-circle-right"></i></a></p>
+
+            <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-success">Local node pack</span></a>
+
+            <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-secondary">Pillow</span></a>
+            <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-secondary">image editing</span></a>
+            <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-secondary">example</span></a>
+
+          </div>
+
+        </div>
 
       </div>
 
     </div>
 
     <!-- ### entry -->
-    <div class="card p-2 m-2" style="max-width:355px">
+    <div class="card mb-3">
 
-      <img class="card-img-top" src="https://i.imgur.com/VEVzfZo.png" alt="small screenshot of matplotlib example node pack"/>
+      <div class="row no-gutters">
 
-      <div class="card-body">
-
-        <h4 class="card-title">Matplotlib example node pack</h4>
-
-        <div class="m-2">
-
-            By:&nbsp;
-
-            <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-dark">Kennedy Richard</span></a> <a href="https://kennedyrichard.com"><i class="fa fa-link"></i></a>
-
+        <div class="col-md-4">
+          <img class="card-img-top" src="https://i.imgur.com/VEVzfZo.png" alt="small screenshot of matplotlib example node pack"/>
         </div>
 
-        <p class="card-text">An example node pack which uses matplotlib for data visualization. <a href="https://github.com/KennedyRichard/matplotlib_example_node_pack">Link <i class="fa fa-arrow-circle-right"></i></a></p>
+        <div class="col-md-8">
 
-        <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-success">Local node pack</span></a>
+          <div class="card-body">
 
-        <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-secondary">matplotlib</span></a>
-        <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-secondary">data visualization</span></a>
-        <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-secondary">example</span></a>
+            <h4 class="card-title">Matplotlib example node pack</h4>
+
+            <div class="m-2">
+
+                By:&nbsp;
+
+                <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-dark">Kennedy Richard</span></a> <a href="https://kennedyrichard.com"><i class="fa fa-link"></i></a>
+
+            </div>
+
+            <p class="card-text">An example node pack which uses matplotlib for data visualization. <a href="https://github.com/KennedyRichard/matplotlib_example_node_pack">Link <i class="fa fa-arrow-circle-right"></i></a></p>
+
+            <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-success">Local node pack</span></a>
+
+            <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-secondary">matplotlib</span></a>
+            <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-secondary">data visualization</span></a>
+            <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-secondary">example</span></a>
+
+          </div>
+
+        </div>
 
       </div>
 
     </div>
 
     <!-- ### entry -->
-    <div class="card p-2 m-2" style="max-width:355px">
+    <div class="card mb-3">
 
-      <img class="card-img-top" src="https://i.imgur.com/94AVbWI.png" alt="small screenshot of examples node pack"/>
+      <div class="row no-gutters">
 
-      <div class="card-body">
-
-        <h4 class="card-title">Examples node pack</h4>
-
-        <div class="m-2">
-
-            By:&nbsp;
-
-            <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-dark">Kennedy Richard</span></a> <a href="https://kennedyrichard.com"><i class="fa fa-link"></i></a>
-
+        <div class="col-md-4">
+          <img class="card-img-top" src="https://i.imgur.com/94AVbWI.png" alt="small screenshot of examples node pack"/>
         </div>
 
-        <p class="card-text">A node pack whose nodes are meant to be examples of how defining specific kinds of nodes/widgets. <a href="https://github.com/KennedyRichard/examples_node_pack">Link <i class="fa fa-arrow-circle-right"></i></a></p>
+        <div class="col-md-8">
 
-        <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-success">Local node pack</span></a>
+          <div class="card-body">
 
-        <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-secondary">widgets</span></a>
-        <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-secondary">example</span></a>
+            <h4 class="card-title">Examples node pack</h4>
+
+            <div class="m-2">
+
+                By:&nbsp;
+
+                <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-dark">Kennedy Richard</span></a> <a href="https://kennedyrichard.com"><i class="fa fa-link"></i></a>
+
+            </div>
+
+            <p class="card-text">A node pack whose nodes are meant to be examples of how defining specific kinds of nodes/widgets. <a href="https://github.com/KennedyRichard/examples_node_pack">Link <i class="fa fa-arrow-circle-right"></i></a></p>
+
+            <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-success">Local node pack</span></a>
+
+            <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-secondary">widgets</span></a>
+            <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-secondary">example</span></a>
+
+          </div>
+
+        </div>
 
       </div>
 
     </div>
 
     <!-- ### entry -->
-    <div class="card p-2 m-2" style="max-width:355px">
+    <div class="card mb-3">
 
-      <img class="card-img-top" src="https://i.imgur.com/gQ3BWUU.png" alt="small screenshot of mynodepack example node pack"/>
+      <div class="row no-gutters">
 
-      <div class="card-body">
-
-        <h4 class="card-title">mynodepack</h4>
-
-        <div class="m-2">
-
-            By:&nbsp;
-
-            <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-dark">Kennedy Richard</span></a> <a href="https://kennedyrichard.com"><i class="fa fa-link"></i></a>
-
+        <div class="col-md-4">
+          <img class="card-img-top" src="https://i.imgur.com/gQ3BWUU.png" alt="small screenshot of mynodepack example node pack"/>
         </div>
 
-        <p class="card-text">A node pack that can be used as a template for node packs meant to be uploaded to PyPI (installed node packs). <a href="https://github.com/KennedyRichard/mynodepack">Link <i class="fa fa-arrow-circle-right"></i></a></p>
+        <div class="col-md-8">
 
-        <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-primary">Installable node pack</span></a>
+          <div class="card-body">
 
-        <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-secondary">pygame</span></a>
-        <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-secondary">templates</span></a>
-        <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-secondary">example</span></a>
+            <h4 class="card-title">mynodepack</h4>
+
+            <div class="m-2">
+
+                By:&nbsp;
+
+                <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-dark">Kennedy Richard</span></a> <a href="https://kennedyrichard.com"><i class="fa fa-link"></i></a>
+
+            </div>
+
+            <p class="card-text">A node pack that can be used as a template for node packs meant to be uploaded to PyPI (installed node packs). <a href="https://github.com/KennedyRichard/mynodepack">Link <i class="fa fa-arrow-circle-right"></i></a></p>
+
+            <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-primary">Installable node pack</span></a>
+
+            <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-secondary">pygame</span></a>
+            <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-secondary">templates</span></a>
+            <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-secondary">example</span></a>
+
+          </div>
+
+        </div>
 
       </div>
 
     </div>
 
     <!-- ### entry -->
-    <div class="card p-2 m-2" style="max-width:355px">
+    <div class="card mb-3">
 
-      <img class="card-img-top" src="https://i.imgur.com/FZrQOki.png" alt="small screenshot of cv2-edu-nodepack node pack"/>
+      <div class="row no-gutters">
 
-      <div class="card-body">
-
-        <h4 class="card-title">cv2-edu-nodepack (OpenCV nodepack)</h4>
-
-        <div class="m-2">
-
-            By:&nbsp;
-
-            <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-dark">Pierre Chauvet</span></a> <a href="https://recherche.uco.fr/fr/chercheur/pierre-chauvet"><i class="fa fa-link"></i></a>
-
+        <div class="col-md-4">
+          <img class="card-img-top" src="https://i.imgur.com/FZrQOki.png" alt="small screenshot of cv2-edu-nodepack node pack"/>
         </div>
 
-        <p class="card-text">An educational OpenCV node pack. Created to serve as a basic tool for discovering image processing. Intended for introductory activities and workshops for high school and undergraduate students (not necessarily in science and technology). <a href="https://github.com/pechauvet/cv2-edu-nodepack">Link <i class="fa fa-arrow-circle-right"></i></a></p>
+        <div class="col-md-8">
 
-        <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-success">Local node pack</span></a>
+          <div class="card-body">
 
-        <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-secondary">OpenCV</span></a>
-        <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-secondary">python-opencv</span></a>
-        <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-secondary">image editing</span></a>
+            <h4 class="card-title">cv2-edu-nodepack (OpenCV nodepack)</h4>
+
+            <div class="m-2">
+
+                By:&nbsp;
+
+                <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-dark">Pierre Chauvet</span></a> <a href="https://recherche.uco.fr/fr/chercheur/pierre-chauvet"><i class="fa fa-link"></i></a>
+
+            </div>
+
+            <p class="card-text">An educational OpenCV node pack. Created to serve as a basic tool for discovering image processing. Intended for introductory activities and workshops for high school and undergraduate students (not necessarily in science and technology). <a href="https://github.com/pechauvet/cv2-edu-nodepack">Link <i class="fa fa-arrow-circle-right"></i></a></p>
+
+            <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-success">Local node pack</span></a>
+
+            <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-secondary">OpenCV</span></a>
+            <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-secondary">python-opencv</span></a>
+            <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-secondary">image editing</span></a>
+
+          </div>
+
+        </div>
 
       </div>
 
@@ -278,33 +329,43 @@ function toggleCollapsedIcon() {
     ### copy the <div> below and paste it right above this comment, then replace the info inside square brackets
     ### with your own info, removing the square brackets as well; also delete the lines that start with "###"
 
-    <div class="card p-2 m-2" style="max-width:355px">
+    <div class="card mb-3">
 
-      <img class="card-img-top" src="[link to a medium-sized image, 400-500px; I use 480px and host my images on imgur.com for free]" alt="small screenshot of [name of your node pack] node pack"/>
+      <div class="row no-gutters">
 
-      <div class="card-body">
-
-        <h4 class="card-title">[name of your node pack]</h4>
-
-        <div class="m-2">
-
-            By:&nbsp;
-
-            ### if there's more than one author, just copy and paste the <a> tag below for each new author
-            <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-dark">[Your name here]</span></a> <a href="[a link to your stuff here; may be your website, email or social media]"><i class="fa fa-link"></i></a>
-
+        <div class="col-md-4">
+          <img class="card-img-top" src="[link to a medium-sized image, 400-500px; I use 480px and host my images on imgur.com for free]" alt="small screenshot of [name of your node pack] node pack"/>
         </div>
 
-        <p class="card-text">[Short description of your node pack]. <a href="[link to your node pack (usually github)]">Link <i class="fa fa-arrow-circle-right"></i></a></p>
+        <div class="col-md-8">
 
-        ### pick one of the <a> elements bellow, according to whether your node pack is a "local" or "installable" one; delete the other <a> element;
+          <div class="card-body">
 
-        <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-success">Local node pack</span></a>
-        <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-primary">Installable node pack</span></a>
+            <h4 class="card-title">[name of your node pack]</h4>
 
-        ### finally, copy the <a> below for each tag you want to add to your node pack, changing the text within the <span> tag; I recommend adding one tag for each third-party library your node pack uses and a couple of additional tags explaining the purpose of your node pack, like "data visualization" or "image editing", etc.;
+            <div class="m-2">
 
-        <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-secondary">[your tag here]</span></a>
+                By:&nbsp;
+
+                ### if there's more than one author, just copy and paste the <a> tag below for each new author
+                <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-dark">[Your name here]</span></a> <a href="[a link to your stuff here; may be your website, email or social media]"><i class="fa fa-link"></i></a>
+
+            </div>
+
+            <p class="card-text">[Short description of your node pack]. <a href="[link to your node pack (usually github)]">Link <i class="fa fa-arrow-circle-right"></i></a></p>
+
+            ### pick one of the <a> elements bellow, according to whether your node pack is a "local" or "installable" one; delete the other <a> element;
+
+            <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-success">Local node pack</span></a>
+            <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-primary">Installable node pack</span></a>
+
+            ### finally, copy the <a> below for each tag you want to add to your node pack, changing the text within the <span> tag; I recommend adding one tag for each third-party library your node pack uses and a couple of additional tags explaining the purpose of your node pack, like "data visualization" or "image editing", etc.;
+
+            <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-secondary">[your tag here]</span></a>
+
+          </div>
+
+        </div>
 
       </div>
 
