@@ -35,6 +35,32 @@
   <!-- syntax highlighting activation -->
   <script>hljs.highlightAll();</script>
 
+  <!-- ##### local style -->
+
+  <style>
+.carousel-caption-custom {
+    background-color: rgba(30, 30, 30, .7);
+    padding:10px;
+    border-radius: 30px;
+}
+
+/* Bottom left text over thumb */
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  font-size:10pt;
+  font-weight:bold;
+  color: rgb(24, 24, 24);
+  background-color: yellow;
+  margin:5px;
+  padding:0px 5px;
+  border-radius: 5px;
+}
+
+.modal-header-compact {padding:0px 10px;}
+  </style>
+
   <!-- ##### local links/scripts -->
 
   <script>
@@ -113,7 +139,10 @@ function toggleCollapsedIcon() {
   </header>
 
 
-  <!-- Page content -->
+  <!-- ### Page content -->
+
+
+  <!-- ## Search/filter bar -->
 
   <main class="container my-3">
 
@@ -126,15 +155,16 @@ function toggleCollapsedIcon() {
     <button class="btn btn-secondary" onclick="searchTerm('');">Clear <i class="fa fa-remove"></i></button>
   </div>
 
+<!-- ## cards -->
 <section id="myCards" class="bg-light">
 
-    <!-- ### entry -->
+    <!-- # entry -->
     <div class="card mb-3">
 
       <div class="row no-gutters">
 
         <div class="col-md-4">
-          <img class="card-img-top" src="https://i.imgur.com/lkhjel0.png" alt="small screenshot of pillow example node pack"/>
+          <img class="card-img" src="https://i.imgur.com/lkhjel0.png" alt="small screenshot of pillow example node pack"/>
         </div>
 
         <div class="col-md-8">
@@ -167,13 +197,13 @@ function toggleCollapsedIcon() {
 
     </div>
 
-    <!-- ### entry -->
+    <!-- # entry -->
     <div class="card mb-3">
 
       <div class="row no-gutters">
 
         <div class="col-md-4">
-          <img class="card-img-top" src="https://i.imgur.com/VEVzfZo.png" alt="small screenshot of matplotlib example node pack"/>
+          <img class="card-img" src="https://i.imgur.com/VEVzfZo.png" alt="small screenshot of matplotlib example node pack"/>
         </div>
 
         <div class="col-md-8">
@@ -206,13 +236,13 @@ function toggleCollapsedIcon() {
 
     </div>
 
-    <!-- ### entry -->
+    <!-- # entry -->
     <div class="card mb-3">
 
       <div class="row no-gutters">
 
         <div class="col-md-4">
-          <img class="card-img-top" src="https://i.imgur.com/94AVbWI.png" alt="small screenshot of examples node pack"/>
+          <img class="card-img" src="https://i.imgur.com/94AVbWI.png" alt="small screenshot of examples node pack" />
         </div>
 
         <div class="col-md-8">
@@ -244,13 +274,13 @@ function toggleCollapsedIcon() {
 
     </div>
 
-    <!-- ### entry -->
+    <!-- # entry -->
     <div class="card mb-3">
 
       <div class="row no-gutters">
 
         <div class="col-md-4">
-          <img class="card-img-top" src="https://i.imgur.com/gQ3BWUU.png" alt="small screenshot of mynodepack example node pack"/>
+          <img class="card-img" src="https://i.imgur.com/gQ3BWUU.png" alt="small screenshot of mynodepack example node pack"/>
         </div>
 
         <div class="col-md-8">
@@ -283,13 +313,23 @@ function toggleCollapsedIcon() {
 
     </div>
 
-    <!-- ### entry -->
+    <!-- # entry -->
     <div class="card mb-3">
 
       <div class="row no-gutters">
 
         <div class="col-md-4">
-          <img class="card-img-top" src="https://i.imgur.com/FZrQOki.png" alt="small screenshot of cv2-edu-nodepack node pack"/>
+          <img
+            class="card-img"
+            style="cursor: pointer; transition: .3s;"
+            onmouseover="this.style.opacity = .7"
+            onmouseout="this.style.opacity = 1"
+            src="https://i.imgur.com/FZrQOki.png"
+            alt="small screenshot of cv2-edu-nodepack node pack"
+            data-bs-toggle="modal"
+            data-bs-target="#cv2-edu-nodepack-modal"
+          />
+          <div class="bottom-left">Click to expand</div>
         </div>
 
         <div class="col-md-8">
@@ -334,7 +374,7 @@ function toggleCollapsedIcon() {
       <div class="row no-gutters">
 
         <div class="col-md-4">
-          <img class="card-img-top" src="[link to a medium-sized image, 400-500px; I use 480px and host my images on imgur.com for free]" alt="small screenshot of [name of your node pack] node pack"/>
+          <img class="card-img" src="[link to a medium-sized image, 400-500px; I use 480px and host my images on imgur.com for free]" alt="small screenshot of [name of your node pack] node pack"/>
         </div>
 
         <div class="col-md-8">
@@ -372,6 +412,74 @@ function toggleCollapsedIcon() {
     </div>
 
     -->
+
+
+<!-- Modals -->
+
+<!-- cv2-edu-nodepack modal -->
+
+<div class="modal" id="cv2-edu-nodepack-modal">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header modal-header-compact">
+        <h4 class="modal-title">cv2-edu-nodepack (OpenCV node pack)</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Carousel -->
+      <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+        <!-- Indicators/dots -->
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+        </div>
+      
+        <!-- The slideshow/carousel -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+                src="https://i.imgur.com/FZrQOki.png"
+                alt="Nodezator graph showing image being opened, undergoing conversions and being displayed."
+                class="d-block"
+                style="width:100%"
+            />
+            <div class="carousel-caption carousel-caption-custom">
+                <p>Open an image, simultaneously convert it to grayscale and invert the RGB channels, and display the result of each conversion.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://i.imgur.com/5Tr7e7P.png" alt="Graph demonstrating morpho_transform node for applying dilate and erode transformations" class="d-block" style="width:100%" />
+            <div class="carousel-caption carousel-caption-custom">
+                <p>Dilate and erode: testing the morpho_transform node, a first one in dilate mode and the second one in erode mode, and which displays the result for each of the two nodes.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://i.imgur.com/JlQbOER.png" alt="Graph demonstrating how to find and count contours of blood cells" class="d-block" style="width:100%" />
+            <div class="carousel-caption carousel-caption-custom">
+                <p>Find contours of blood cells and count them. It illustrates the use of these nodes</p>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Left and right controls/icons -->
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
 
 
 </section>
