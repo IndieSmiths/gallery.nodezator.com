@@ -39,9 +39,10 @@
 
   <style>
 .carousel-caption-custom {
-    background-color: rgba(30, 30, 30, .7);
-    padding:10px;
-    border-radius: 30px;
+    background-color: rgba(30, 30, 30, .6);
+    padding:4px 10px;
+    border-radius: 20px;
+    font-size:11pt;
 }
 
 /* Bottom left text over thumb */
@@ -59,6 +60,7 @@
 }
 
 .modal-header-compact {padding:0px 10px;}
+
   </style>
 
   <!-- ##### local links/scripts -->
@@ -77,7 +79,7 @@ function search() {
   card_bodies = section.getElementsByClassName('card-body');
 
   // Declare more variables ot use within the loop
-  var i, card_body, card, allText, moreStart, moreEnd, txtToSearch;
+  var i, card_body, card, allText, linkTextStart, linkTextEnd, txtToSearch;
 
   // Loop through all card bodies, hiding the respective card of those
   // whose text don't match the search query
@@ -88,12 +90,12 @@ function search() {
 
     allText = card_body.innerText;
 
-    // get what's around "Link "
+    // get what's around "Link to node pack "
 
-    moreStart = allText.lastIndexOf("Link ");
-    moreEnd = moreStart + 5;
+    linkTextStart = allText.lastIndexOf("Link to node pack ");
+    linkTextEnd = linkTextStart + 18;
 
-    txtToSearch = allText.slice(0, moreStart) + allText.slice(moreEnd);
+    txtToSearch = allText.slice(0, linkTextStart) + allText.slice(linkTextEnd);
 
     // update style.display according to search
 
@@ -177,11 +179,15 @@ function toggleCollapsedIcon() {
 
                 By:&nbsp;
 
-                <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-dark">Kennedy Richard</span></a> <a href="https://kennedyrichard.com"><i class="fa fa-link"></i></a>
+                <div class="btn-group border border-1 rounded-pill">
+                  <button type="button" class="btn btn-dark btn-sm" onclick="searchTerm(this.innerText);">Kennedy Richard</button>
+                  <button type="button" class="btn btn-sm"><a href="https://kennedyrichard.com">website</a></button>
+                  <button type="button" class="btn btn-sm"><a href="mailto:kennedy@kennedyrichard.com">email</a></button>
+                </div>
 
             </div>
 
-            <p class="card-text">An example node pack which uses Pillow for image editing. <a href="https://github.com/KennedyRichard/pillow_example_node_pack">Link <i class="fa fa-arrow-circle-right"></i></a></p>
+            <p class="card-text">An example node pack which uses Pillow for image editing. <a class="btn btn-primary btn-sm" href="https://github.com/KennedyRichard/pillow_example_node_pack">Link to node pack <i class="fa fa-arrow-circle-right"></i></a></p>
 
             <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-success">Local node pack</span></a>
 
@@ -216,11 +222,15 @@ function toggleCollapsedIcon() {
 
                 By:&nbsp;
 
-                <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-dark">Kennedy Richard</span></a> <a href="https://kennedyrichard.com"><i class="fa fa-link"></i></a>
+                <div class="btn-group border border-1 rounded-pill">
+                  <button type="button" class="btn btn-dark btn-sm" onclick="searchTerm(this.innerText);">Kennedy Richard</button>
+                  <button type="button" class="btn btn-sm"><a href="https://kennedyrichard.com">website</a></button>
+                  <button type="button" class="btn btn-sm"><a href="mailto:kennedy@kennedyrichard.com">email</a></button>
+                </div>
 
             </div>
 
-            <p class="card-text">An example node pack which uses matplotlib for data visualization. <a href="https://github.com/KennedyRichard/matplotlib_example_node_pack">Link <i class="fa fa-arrow-circle-right"></i></a></p>
+            <p class="card-text">An example node pack which uses matplotlib for data visualization. <a class="btn btn-primary btn-sm" href="https://github.com/KennedyRichard/matplotlib_example_node_pack">Link to node pack <i class="fa fa-arrow-circle-right"></i></a></p>
 
             <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-success">Local node pack</span></a>
 
@@ -255,11 +265,15 @@ function toggleCollapsedIcon() {
 
                 By:&nbsp;
 
-                <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-dark">Kennedy Richard</span></a> <a href="https://kennedyrichard.com"><i class="fa fa-link"></i></a>
+                <div class="btn-group border border-1 rounded-pill">
+                  <button type="button" class="btn btn-dark btn-sm" onclick="searchTerm(this.innerText);">Kennedy Richard</button>
+                  <button type="button" class="btn btn-sm"><a href="https://kennedyrichard.com">website</a></button>
+                  <button type="button" class="btn btn-sm"><a href="mailto:kennedy@kennedyrichard.com">email</a></button>
+                </div>
 
             </div>
 
-            <p class="card-text">A node pack whose nodes are meant to be examples of how defining specific kinds of nodes/widgets. <a href="https://github.com/KennedyRichard/examples_node_pack">Link <i class="fa fa-arrow-circle-right"></i></a></p>
+            <p class="card-text">A node pack whose nodes are meant to be examples of how defining specific kinds of nodes/widgets. <a class="btn btn-primary btn-sm" href="https://github.com/KennedyRichard/examples_node_pack">Link to node pack <i class="fa fa-arrow-circle-right"></i></a></p>
 
             <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-success">Local node pack</span></a>
 
@@ -293,11 +307,15 @@ function toggleCollapsedIcon() {
 
                 By:&nbsp;
 
-                <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-dark">Kennedy Richard</span></a> <a href="https://kennedyrichard.com"><i class="fa fa-link"></i></a>
+                <div class="btn-group border border-1 rounded-pill">
+                  <button type="button" class="btn btn-dark btn-sm" onclick="searchTerm(this.innerText);">Kennedy Richard</button>
+                  <button type="button" class="btn btn-sm"><a href="https://kennedyrichard.com">website</a></button>
+                  <button type="button" class="btn btn-sm"><a href="mailto:kennedy@kennedyrichard.com">email</a></button>
+                </div>
 
             </div>
 
-            <p class="card-text">A node pack that can be used as a template for node packs meant to be uploaded to PyPI (installed node packs). <a href="https://github.com/KennedyRichard/mynodepack">Link <i class="fa fa-arrow-circle-right"></i></a></p>
+            <p class="card-text">A node pack that can be used as a template for node packs meant to be uploaded to PyPI (installed node packs). <a class="btn btn-primary btn-sm" href="https://github.com/KennedyRichard/mynodepack">Link to node pack <i class="fa fa-arrow-circle-right"></i></a></p>
 
             <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-primary">Installable node pack</span></a>
 
@@ -342,11 +360,15 @@ function toggleCollapsedIcon() {
 
                 By:&nbsp;
 
-                <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-dark">Pierre Chauvet</span></a> <a href="https://recherche.uco.fr/fr/chercheur/pierre-chauvet"><i class="fa fa-link"></i></a>
+                <div class="btn-group border border-1 rounded-pill">
+                  <button type="button" class="btn btn-dark btn-sm" onclick="searchTerm(this.innerText);">Pierre Chauvet</button>
+                  <button type="button" class="btn btn-sm"><a href="https://recherche.uco.fr/fr/chercheur/pierre-chauvet">webpage [Fr]</a></button>
+                  <button type="button" class="btn btn-sm"><a href="mailto:pierre.chauvet@uco.fr">email</a></button>
+                </div>
 
             </div>
 
-            <p class="card-text">An educational OpenCV node pack. Created to serve as a basic tool for discovering image processing. Intended for introductory activities and workshops for high school and undergraduate students (not necessarily in science and technology). <a href="https://github.com/pechauvet/cv2-edu-nodepack">Link <i class="fa fa-arrow-circle-right"></i></a></p>
+            <p class="card-text">An educational OpenCV node pack. Created to serve as a basic tool for discovering image processing. Intended for introductory activities and workshops for high school and undergraduate students (not necessarily in science and technology). <a class="btn btn-primary btn-sm" href="https://github.com/pechauvet/cv2-edu-nodepack">Link to node pack <i class="fa fa-arrow-circle-right"></i></a></p>
 
             <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-success">Local node pack</span></a>
 
@@ -387,12 +409,21 @@ function toggleCollapsedIcon() {
 
                 By:&nbsp;
 
-                ### if there's more than one author, just copy and paste the <a> tag below for each new author
-                <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-dark">[Your name here]</span></a> <a href="[a link to your stuff here; may be your website, email or social media]"><i class="fa fa-link"></i></a>
+                ### if there's more than one author, just copy and paste the <div> tag below for each additional author
+                ###
+                ### you can add more links, but try to keep the number of links small, a website/webpage and email should suffice; 
+                ### use an appropriate name of the link; if it is to a website, use "website", if it is not another kind of content,
+                ### use "webpage" or "social media" if it is a social media link
+
+                <div class="btn-group border border-1 rounded-pill">
+                  <button type="button" class="btn btn-dark btn-sm" onclick="searchTerm(this.innerText);">[Your name here]</button>
+                  <button type="button" class="btn btn-sm"><a href="[website, page, social media about you here"]>website/webpage</a></button>
+                  <button type="button" class="btn btn-sm"><a href="mailto:[your email here]">email</a></button>
+                </div>
 
             </div>
 
-            <p class="card-text">[Short description of your node pack]. <a href="[link to your node pack (usually github)]">Link <i class="fa fa-arrow-circle-right"></i></a></p>
+            <p class="card-text">[Short description of your node pack]. <a href="[link to your node pack (usually github)]">Link to node pack <i class="fa fa-arrow-circle-right"></i></a></p>
 
             ### pick one of the <a> elements bellow, according to whether your node pack is a "local" or "installable" one; delete the other <a> element;
 
@@ -429,13 +460,13 @@ function toggleCollapsedIcon() {
       </div>
 
       <!-- Carousel -->
-      <div id="demo" class="carousel slide" data-bs-ride="carousel">
+      <div id="cv2-edu-nodepack-carousel" class="carousel slide" data-bs-ride="carousel">
 
         <!-- Indicators/dots -->
         <div class="carousel-indicators">
-          <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-          <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-          <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+          <button type="button" data-bs-target="#cv2-edu-nodepack-carousel" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#cv2-edu-nodepack-carousel" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#cv2-edu-nodepack-carousel" data-bs-slide-to="2"></button>
         </div>
       
         <!-- The slideshow/carousel -->
@@ -467,10 +498,10 @@ function toggleCollapsedIcon() {
       
         <!-- Left and right controls/icons -->
 
-        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#cv2-edu-nodepack-carousel" data-bs-slide="prev">
           <span class="carousel-control-prev-icon"></span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#cv2-edu-nodepack-carousel" data-bs-slide="next">
           <span class="carousel-control-next-icon"></span>
         </button>
 
