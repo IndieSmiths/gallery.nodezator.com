@@ -39,24 +39,22 @@
 
   <style>
 .carousel-caption-custom {
-    background-color: rgba(30, 30, 30, .6);
-    padding:4px 10px;
-    border-radius: 20px;
+    padding:4px;
+    margin-bottom:0px;
     font-size:11pt;
 }
+.carousel-caption-custom:before {
+  content: "Image: ";
+}
 
-/* Bottom left text over thumb */
-.bottom-left {
-  position: absolute;
-  bottom: 8px;
-  left: 8px;
-  font-size:10pt;
-  font-weight:bold;
-  color: rgb(24, 24, 24);
-  background-color: yellow;
-  margin:5px;
-  padding:0px 5px;
-  border-radius: 5px;
+.click-image-to-expand {
+    position:absolute;
+    top:0px;
+    left:0px;
+    background-color:yellow;
+    font-weight:bold;
+    font-size:9pt;
+    padding:2px 4px;
 }
 
 .modal-header-compact {padding:0px 10px;}
@@ -173,7 +171,7 @@ function toggleCollapsedIcon() {
 
           <div class="card-body">
 
-            <h4 class="card-title">Pillow example node pack</h4>
+            <h4 class="card-title">Pillow example node pack <a class="btn btn-primary btn-sm" href="https://github.com/KennedyRichard/pillow_example_node_pack">Link to node pack <i class="fa fa-arrow-circle-right"></i></a></h4>
 
             <div class="m-2">
 
@@ -187,7 +185,7 @@ function toggleCollapsedIcon() {
 
             </div>
 
-            <p class="card-text">An example node pack which uses Pillow for image editing. <a class="btn btn-primary btn-sm" href="https://github.com/KennedyRichard/pillow_example_node_pack">Link to node pack <i class="fa fa-arrow-circle-right"></i></a></p>
+            <p class="card-text">An example node pack which uses Pillow for image editing.</p>
 
             <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-success">Local node pack</span></a>
 
@@ -216,7 +214,7 @@ function toggleCollapsedIcon() {
 
           <div class="card-body">
 
-            <h4 class="card-title">Matplotlib example node pack</h4>
+            <h4 class="card-title">Matplotlib example node pack <a class="btn btn-primary btn-sm" href="https://github.com/KennedyRichard/matplotlib_example_node_pack">Link to node pack <i class="fa fa-arrow-circle-right"></i></a></h4>
 
             <div class="m-2">
 
@@ -230,7 +228,7 @@ function toggleCollapsedIcon() {
 
             </div>
 
-            <p class="card-text">An example node pack which uses matplotlib for data visualization. <a class="btn btn-primary btn-sm" href="https://github.com/KennedyRichard/matplotlib_example_node_pack">Link to node pack <i class="fa fa-arrow-circle-right"></i></a></p>
+            <p class="card-text">An example node pack which uses matplotlib for data visualization.</p>
 
             <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-success">Local node pack</span></a>
 
@@ -259,7 +257,7 @@ function toggleCollapsedIcon() {
 
           <div class="card-body">
 
-            <h4 class="card-title">Examples node pack</h4>
+            <h4 class="card-title">Examples node pack <a class="btn btn-primary btn-sm" href="https://github.com/KennedyRichard/examples_node_pack">Link to node pack <i class="fa fa-arrow-circle-right"></i></a></h4>
 
             <div class="m-2">
 
@@ -273,7 +271,7 @@ function toggleCollapsedIcon() {
 
             </div>
 
-            <p class="card-text">A node pack whose nodes are meant to be examples of how defining specific kinds of nodes/widgets. <a class="btn btn-primary btn-sm" href="https://github.com/KennedyRichard/examples_node_pack">Link to node pack <i class="fa fa-arrow-circle-right"></i></a></p>
+            <p class="card-text">A node pack whose nodes are meant to be examples of how defining specific kinds of nodes/widgets.</p>
 
             <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-success">Local node pack</span></a>
 
@@ -301,7 +299,7 @@ function toggleCollapsedIcon() {
 
           <div class="card-body">
 
-            <h4 class="card-title">mynodepack</h4>
+            <h4 class="card-title">mynodepack <a class="btn btn-primary btn-sm" href="https://github.com/KennedyRichard/mynodepack">Link to node pack <i class="fa fa-arrow-circle-right"></i></a></h4>
 
             <div class="m-2">
 
@@ -315,7 +313,7 @@ function toggleCollapsedIcon() {
 
             </div>
 
-            <p class="card-text">A node pack that can be used as a template for node packs meant to be uploaded to PyPI (installed node packs). <a class="btn btn-primary btn-sm" href="https://github.com/KennedyRichard/mynodepack">Link to node pack <i class="fa fa-arrow-circle-right"></i></a></p>
+            <p class="card-text">A node pack that can be used as a template for node packs meant to be uploaded to PyPI (installed node packs).</p>
 
             <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-primary">Installable node pack</span></a>
 
@@ -347,14 +345,14 @@ function toggleCollapsedIcon() {
             data-bs-toggle="modal"
             data-bs-target="#cv2-edu-nodepack-modal"
           />
-          <div class="bottom-left">Click to expand</div>
+          <span class="click-image-to-expand rounded-pill">Click image to expand</span>
         </div>
 
         <div class="col-md-8">
 
           <div class="card-body">
 
-            <h4 class="card-title">cv2-edu-nodepack (OpenCV nodepack)</h4>
+            <h4 class="card-title">cv2-edu-nodepack (OpenCV nodepack) <a class="btn btn-primary btn-sm" href="https://github.com/pechauvet/cv2-edu-nodepack">Link to node pack <i class="fa fa-arrow-circle-right"></i></a></h4>
 
             <div class="m-2">
 
@@ -368,7 +366,7 @@ function toggleCollapsedIcon() {
 
             </div>
 
-            <p class="card-text">An educational OpenCV node pack. Created to serve as a basic tool for discovering image processing. Intended for introductory activities and workshops for high school and undergraduate students (not necessarily in science and technology). <a class="btn btn-primary btn-sm" href="https://github.com/pechauvet/cv2-edu-nodepack">Link to node pack <i class="fa fa-arrow-circle-right"></i></a></p>
+            <p class="card-text">An educational OpenCV node pack. Created to serve as a basic tool for discovering image processing. Intended for introductory activities and workshops for high school and undergraduate students (not necessarily in science and technology).</p>
 
             <a href="#" onclick="searchTerm(this.innerText);"><span class="badge rounded-pill bg-success">Local node pack</span></a>
 
@@ -403,7 +401,7 @@ function toggleCollapsedIcon() {
 
           <div class="card-body">
 
-            <h4 class="card-title">[name of your node pack]</h4>
+            <h4 class="card-title">[name of your node pack] <a href="[link to your node pack (usually github)]">Link to node pack <i class="fa fa-arrow-circle-right"></i></a></h4>
 
             <div class="m-2">
 
@@ -423,7 +421,7 @@ function toggleCollapsedIcon() {
 
             </div>
 
-            <p class="card-text">[Short description of your node pack]. <a href="[link to your node pack (usually github)]">Link to node pack <i class="fa fa-arrow-circle-right"></i></a></p>
+            <p class="card-text">[Short description of your node pack].</p>
 
             ### pick one of the <a> elements bellow, according to whether your node pack is a "local" or "installable" one; delete the other <a> element;
 
@@ -472,27 +470,21 @@ function toggleCollapsedIcon() {
         <!-- The slideshow/carousel -->
         <div class="carousel-inner">
           <div class="carousel-item active">
+            <p class="carousel-caption-custom">Open an image, simultaneously convert it to grayscale and invert the RGB channels, and display the result of each conversion.</p>
             <img
                 src="https://i.imgur.com/FZrQOki.png"
                 alt="Nodezator graph showing image being opened, undergoing conversions and being displayed."
                 class="d-block"
                 style="width:100%"
             />
-            <div class="carousel-caption carousel-caption-custom">
-                <p>Open an image, simultaneously convert it to grayscale and invert the RGB channels, and display the result of each conversion.</p>
-            </div>
           </div>
           <div class="carousel-item">
+            <p class="carousel-caption-custom">Dilate and erode: testing the morpho_transform node, a first one in dilate mode and the second one in erode mode, and which displays the result for each of the two nodes.</p>
             <img src="https://i.imgur.com/5Tr7e7P.png" alt="Graph demonstrating morpho_transform node for applying dilate and erode transformations" class="d-block" style="width:100%" />
-            <div class="carousel-caption carousel-caption-custom">
-                <p>Dilate and erode: testing the morpho_transform node, a first one in dilate mode and the second one in erode mode, and which displays the result for each of the two nodes.</p>
-            </div>
           </div>
           <div class="carousel-item">
+            <p class="carousel-caption-custom">Find contours of blood cells and count them. It illustrates the use of these nodes</p>
             <img src="https://i.imgur.com/JlQbOER.png" alt="Graph demonstrating how to find and count contours of blood cells" class="d-block" style="width:100%" />
-            <div class="carousel-caption carousel-caption-custom">
-                <p>Find contours of blood cells and count them. It illustrates the use of these nodes</p>
-            </div>
           </div>
         </div>
       
